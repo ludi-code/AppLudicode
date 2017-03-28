@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@android:drawable/presence_online"
+            android:title="Les jeux" >
+            <menu >
+                <item android:title="jeu1"
+                    android:id="@+id/nav_jeu1"
+                    android:icon="@android:drawable/presence_online" />
+                <item
+                    android:id="@+id/nav_jeu2"
+                    android:icon="@android:drawable/presence_online"
+                    android:title="jeu2" />
+                <item
+                    android:id="@+id/nav_jeu3"
+                    android:icon="@android:drawable/presence_online"
+                    android:title="jeu3" />
+            </menu>
+        </item>
+        <item android:title="Les Statisiques" >
+            <menu >
+                <item android:title="Statistiques"
+                    android:id="@+id/nav_stat"
+                    android:icon="@android:drawable/btn_star_big_on" />
+            </menu>
+        </item>
+        <item android:title="Connectez-vous !">
+            <menu>
+                <item
+                    android:id="@+id/nav_connexion"
+                    android:icon="@android:drawable/ic_lock_power_off"
+                    android:title="Connexion" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

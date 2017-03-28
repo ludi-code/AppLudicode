@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">AppLudicode</string>
+
+    <!-- Strings related to login -->
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_login_or_passwd">Nom d\'utilisateur ou mot de passe invalide</string>
+    <string name="error_incorrect_password">Ce mot de passe est incorrect</string>
+    <string name="error_field_required">Ce champ est obligatoir</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="prompt_email">Nom d\'utilisateur</string>
+    <string name="action_sign_in">Connexion</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="jeu1_activity">Programmation par bloc</string>
+    <string name="jeu2_activity">Programmation par carte</string>
+    <string name="jeu3_activity">Jeu Python</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <!--Menu latéral -->
+    <string name="Slogan">Coder en s\'amusant !</string>
+    <string name="Nom_app">LudiCode</string>
+</resources>
