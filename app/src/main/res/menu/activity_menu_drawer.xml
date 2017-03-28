@@ -6,20 +6,20 @@
             android:icon="@android:drawable/presence_online"
             android:title="Les jeux" >
             <menu >
-                <item android:title="jeu1"
+                <item android:title="@string/Prog_blocs"
                     android:id="@+id/nav_jeu1"
                     android:icon="@android:drawable/presence_online" />
                 <item
                     android:id="@+id/nav_jeu2"
                     android:icon="@android:drawable/presence_online"
-                    android:title="jeu2" />
+                    android:title="@string/Prog_cartes" />
                 <item
                     android:id="@+id/nav_jeu3"
                     android:icon="@android:drawable/presence_online"
-                    android:title="jeu3" />
+                    android:title="@string/Prog_python" />
             </menu>
         </item>
-        <item android:title="Les Statisiques" >
+        <item android:title="Les Statistiques" >
             <menu >
                 <item android:title="Statistiques"
                     android:id="@+id/nav_stat"

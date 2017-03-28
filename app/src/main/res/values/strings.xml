@@ -24,4 +24,7 @@
     <!--Menu latéral -->
     <string name="Slogan">Coder en s\'amusant !</string>
     <string name="Nom_app">LudiCode</string>
+    <string name="Prog_blocs">Programmation par blocs</string>
+    <string name="Prog_cartes">Programmation par cartes</string>
+    <string name="Prog_python">Programmation Python</string>
 </resources>

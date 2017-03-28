@@ -10,7 +10,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
 public class MenuActivity extends AppCompatActivity
@@ -43,13 +42,6 @@ public class MenuActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -58,14 +50,18 @@ public class MenuActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_jeu1) {
+            setTitle("Programmation par blocs");
               fragment = new JeuProgBlocFragment();
         } else if (id == R.id.nav_jeu2) {
+                setTitle("Programmation pas cartes");
                fragment = new JeuProgCarteActivity();
         } else if (id == R.id.nav_jeu3) {
+                setTitle("Programmation Python");
                 fragment = new JeuPythonActivity();
         } else if (id == R.id.nav_connexion) {
             intent = new Intent(this, LoginActivity.class);
         } else if (id == R.id.nav_stat){
+            setTitle("Statistiques");
             fragment = new StatistiqueFragment();
         }
         try {
