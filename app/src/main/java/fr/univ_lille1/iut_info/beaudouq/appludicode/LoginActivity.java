@@ -217,7 +217,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private boolean ConnectionToBdd(String utilisateur, String mdp) {
         // Instantiate the RequestQueue.
         mRequestQueue = Volley.newRequestQueue(this);
-        String url = "http://www.ludicode.eu";
+        String url = "http://www.ludicode.eu/v2/teachers/search?term="+utilisateur;
 
 // Request a string response from the provided URL.
         stringRequest = new StringRequest(Request.Method.GET, url,
