@@ -3,8 +3,11 @@ package fr.univ_lille1.iut_info.beaudouq.appludicode;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.Loader;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -81,7 +84,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.user);
         populateAutoComplete();
-        mTestView = (TextView) findViewById(R.id.test);
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -165,10 +167,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private void attemptLogin() {
 
 
-
-
-
-
         if (mAuthTask != null) {
             return;
         }
@@ -226,12 +224,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
                         user = new Gson().fromJson(response, User.class);
-                        mTestView.setText("ok");
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                mTestView.setText("That didn't work!");
+                AlertMessage();
             }
         });
         stringRequest.setTag(TAG);
@@ -392,6 +389,33 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask = null;
             showProgress(false);
         }
+
     }
+    private void AlertMessage(){
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(LoginActivity.this);
+        builder1.setMessage("Impossible de se connecter au serveur");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Réessayer",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Retour au menu",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                        LoginActivity.this.startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
+
 }
 
